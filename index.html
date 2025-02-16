@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/htmx.min.js"></script>
+  <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+</head>
+<body class="content-grid">
+
+  <header id="header">
+    <div class="header-names-container">
+      <h2 class="sub-header-text">Event Name<br>Introduction</h2>
+      <h1 class="event-name">Event Name</h1>
+      <h2 class="sub-header-text">Small event<br>description</h2>
+    </div>  
+    <div class="date">
+      <div class="top-row">
+          <span class="may">Month</span>
+      </div>
+      <div class="middle-row">
+          <span class="friday text-borders">Day</span>
+          <span class="highlight">Calendar Day</span>
+          <span class="time text-borders">Time</span>
+      </div>
+      <div class="bottom-row">
+          <span class="year">Year</span>
+      </div>
+      <div class="splitter-button">
+        <a class="button-link" id="mainButton">
+          <button class="rsvp-button">Click here to RSVP and for finer details</button>
+        </a>
+        <a class="button-link" id="rsvpButton" href="#form" style="display: none;">
+          <button class="rsvp-button-split">RSVP</button>
+        </a>
+
+        <!--Enter your page directory where you would like the button to redirect to when clicked-->
+        <a class="button-link" id="infoButton" href="/info" style="display: none;"> 
+          <button class="rsvp-button-split">Finer Details</button>
+        </a>
+      </div> 
+    </div>   
+  </header>
+
+  <main id="main">
+
+    <div class="divider-bottom"></div>
+    <div class="divider-top"></div>
+    
+    <section>
+      <h1>Schedule</h1>
+      <div class="scheduled-events">
+        <ul class="event-list">
+          <li class="event">13:00<span>event</span></li>
+          <li class="event">13:30<span>event</span></li>
+          <li class="event">14:00<span>event</span></li>
+          <li class="event">16:00<span>event</span></li>
+          <li class="event">18:00<span>event</span></li>
+          <li class="event">19:00<span>event</span></li>
+          <li class="event">19:30<span>event</span></li>
+          <li class="event">20:00<span>event</span></li>
+          <li class="event">00:00<span>event</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider-bottom"></div>
+    <div class="divider-top"></div>
+
+    <section class="gallery">
+      <h1>Gallery</h1>
+      <div class="grid-layout">
+
+        <article class="image">
+          <h2>Name</h2>
+          <img src="" alt="" />
+          <h3>Description</h3>
+        </article>
+
+        <article class="image">
+          <h2>Name</h2>
+          <img src="" alt="" />
+          <h3>Description</h3>
+        </article>
+
+        <article class="image">
+          <h2>Name</h2>
+          <img src="" alt="" />
+          <h3>Description</h3>
+        </article>
+        
+        <article class="image">
+          <h2>Name</h2>
+          <img src="" alt="" />
+          <h3>Description</h3>
+        </article>
+
+        <article class="image">
+          <h2>Name</h2>
+          <img src="" alt="" />
+          <h3>Description</h3>
+        </article>
+
+        <article class="image">
+          <h2>Name</h2>
+          <img src="" alt="" />
+          <h3>Description</h3>
+        </article>
+
+      </div>
+    
+    </section>
+
+    <div class="divider-bottom"></div>
+    <div class="divider-top"></div>   
+
+    <section id="form"> 
+      <h1>RSVP</h1>
+      <p>Enter additional/optional text here<span>(no later than [enter end date here])</span>:</p>
+      <form
+        hx-post=“LAMBDA_FUNCTION_URL” 
+        hx-target="#response"
+        hx-swap="outerHTML"
+        hx-ext="json-enc">
+        <div class="form">
+          <!-- Name input -->
+          <label for="name">Who are you RSVPing for?</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form">
+          <!-- Attendance -->
+          <label for="attending">Response:</label>
+          <select id="attending" name="attending" required>
+              <option value="yes">Accept</option>
+              <option value="no">Decline</option>
+          </select>
+        </div>
+        <div class="form">
+          <label for="dietaryRequirements">Do you have any allergies or dietary requirements? If yes, please include them here:</label>
+          <input type="text" id="dietaryRequirements" name="dietaryRequirements" required>
+        </div>
+        <div class="form">
+          <label for="message">Optional Message:</label>
+          <input type="text" id="message" name="message">
+        </div>
+        <div class="submit-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <div class="response-container">
+    <div id="response"></div>
+    <p id="redirect-placeholder"> </p>
+    <p id="redirect-msg">You will be redirected in <span id="countdown">5</span> seconds. If not, click <a id="redirect-link" href="/">here</a>.</p>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

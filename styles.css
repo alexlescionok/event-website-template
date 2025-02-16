@@ -1,0 +1,462 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: url("./Fonts/BebasNeue/BebasNeue-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeistRegular";
+  src: url("./Fonts/geist/Geist-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GeistBold";
+  src: url("./Fonts/geist/Geist-Bold.woff2") format("woff2");
+}
+
+:root {
+  --header-font: "BebasNeue";
+  --sub-header-font: "GeistBold";
+  font-family: "GeistRegular", sans-serif;
+  --header-font-colour: #1a1919 ;
+  --main-font-colour: #161414;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #6f71afc7;
+  color: var(--main-font-colour);
+  box-sizing: border-box;
+}
+
+body.changed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  font-size: clamp(2.2rem, 4vw, 5rem);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header styles start */
+
+header {
+  color: var(--main-font-colour);
+  width: 100%;
+  margin: 0 auto;  
+}
+
+.header-names-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.sub-header-text {
+  font-family: var(--sub-header-font);
+  font-size: clamp(1.5rem, 6vw, 3rem);
+}
+
+.event-name {
+  font-family: var(--header-font);
+  color: var(--header-font-colour);
+  font-size: clamp(2rem, 13vw, 12rem);
+  margin: 20px auto;
+  white-space: nowrap;
+}
+
+.date {
+  text-align: center;
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin-bottom: 80px;
+}
+
+.top-row {
+  margin-top: 30px;
+}
+
+.middle-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 5%;
+}
+
+.highlight {
+  font-size: clamp(3rem, 12vw, 4rem);
+  color: var(--header-font-colour);
+}
+
+.bottom-row {
+  margin-bottom: 50px;
+}
+
+.button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  text-decoration: none; 
+}
+
+.text-borders {
+  min-width: 160px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 10px;
+}
+
+h1 {
+  color: var(--header-font-colour);
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* Header styles end */
+
+/* Schedule styles start*/
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.event {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.event span {
+  margin-left: 50px;
+  text-align: right;
+}
+
+.event-list li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Schedule styles end*/
+
+/* vendors styles start */
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  max-width: 100%;
+}
+
+.images {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.images img {
+  max-width: 100%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* vendors styles end */
+
+/* venue info styles start */
+
+.finer-details h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+}
+
+.finer-details h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.venue-info p  {
+  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+}
+
+.finer-details p {
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
+}
+
+/* venue info styles end */
+
+/* form styles start */
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+#form p {
+  font-size: clamp(2.5rem, 4vw, 1.5rem);
+}
+
+#form span {
+  color: var(--header-font-colour);
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form label {
+  margin: 20px 50px 0 0;
+  padding: 0;
+  text-align: left;
+  font-size: clamp(2rem, 10vw, 2.5rem);
+  flex-basis: 50%; /* Fix the width of the label */
+  flex-shrink: 0; /* Prevents label from shrinking */
+}
+
+.form input, .form select {
+  background-color: #7b7776;
+  width: 100%;
+  margin: 20px;
+  border: 3px solid var(--main-font-colour);
+  color: var(--main-font-colour);
+  cursor: pointer;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.submit-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form styles end */
+
+/* button styles start */
+
+#mainButton {
+margin: 0 20px;
+}
+
+.rsvp-button {
+  padding: 20px;
+}
+
+.rsvp-button-split {
+  border: 3px solid var(--header-font-colour);
+  width: 250px;
+  margin: 20px 20px;
+  padding: 10px;
+}
+
+button {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  height: 100px;
+  min-width: 200px;
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  text-align: center;
+  word-wrap: break-word;
+  background-color: #7b7776;
+  border: 3px solid var(--header-font-colour);
+  color: var(--main-font-colour);
+  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.507);
+  transition: transform 0.6s, box-shadow 0.6s; 
+  cursor: pointer;
+}
+
+
+button:hover {
+  background-color: #7b7776;
+  color: var(--header-font-colour);
+  transform: scale(1.1);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* button styles end */
+
+/* divider styles start */
+
+.divider-bottom {
+  border-bottom: 1px solid var(--main-font-colour);
+  border-radius: 20px;
+  padding: 0 20px 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 20px;
+}
+
+.divider-top {
+  border-top: 1px solid var(--main-font-colour);
+  border-radius: 20px;
+  padding: 0 20px 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 20px;
+}
+
+/* divider styles end */
+
+/* response and redirect from form styles start */
+.response-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  color: var(--header-font-colour);
+}
+
+#response {
+  margin-bottom: 80px;
+}
+
+#redirect-placeholder {
+  display: none;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-top: 20px;
+}
+
+#redirect-msg {
+  color: var(--main-font-colour);
+  display: none;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  margin-top: 20px;
+}
+
+/* response and redirect from form styles end */
+
+/* hyperlink styles start  */
+a {
+  color: var(--header-font-colour);
+}
+/* hyperlink styles end  */
+
+/* Adjustments for screens max-width 790px */
+@media (max-width: 790px) {
+  .event-list {
+      max-width: 500px;
+  }
+  .text-borders {
+      min-width: 140px;
+  }
+  button {
+      min-width: 150px;
+  }
+}
+
+@media (max-width: 760px) {
+  .images img {
+      width: 250px;
+      height: 250px;
+  }
+}
+
+/* Adjustments for screens max-width 689px */
+@media (max-width: 689px) {
+  .grid-layout {
+      gap: 0;
+  }
+}
+
+
+/* Adjustments for screens max-width 580px */
+@media (max-width: 580px) {
+  form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .form {
+      flex-direction: column;
+      width: 100%;
+      
+  }
+  .form label {
+      margin-right: 0;
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      text-align: center;
+  }
+  .form input, .form select {
+      font-size: clamp(1.5rem, 3vw, 1.5rem);
+      width: 100%;
+      height: 60px;
+      max-width: 400px;
+      text-align: center;
+  }
+  .event, .images {
+      font-size: 2rem;
+  }
+  .images{
+      border-bottom: 2px solid #000000bb
+  }
+  .images:nth-child(6) {
+      border-bottom: none;
+  }
+}
+
+/* Adjustments for screens max-width 500px */
+@media (max-width: 500px) {
+  
+  .button-link {
+      margin: 0 auto;
+  }
+  .rsvp-button {
+      height: auto;
+  }
+  .images img {
+      width: 250px;
+      height: 250px;
+  }
+}
+
+/* Adjustments for screens max-width 460px */
+@media (max-width: 460px) {
+  #form p {
+      padding: 20px;
+  }
+  .text-borders {
+      min-width: 50px;
+  }
+  .highlight {
+      position: relative;
+      left: 3px;
+  }
+  .divider-bottom, .divider-top {
+      max-width: 360px;
+  }
+}
+
+@media (max-width: 340px) {
+  .grid-layout {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
