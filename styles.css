@@ -384,6 +384,14 @@ a {
   .grid-layout {
       gap: 0;
   }
+
+  .highlight {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .text-borders {
+    min-width: 60px;
+}
 }
 
 
@@ -445,14 +453,22 @@ a {
   }
   .text-borders {
       min-width: 50px;
+      margin: 20px 0;
   }
-  .highlight {
-      position: relative;
-      left: 3px;
-  }
+
   .divider-bottom, .divider-top {
       max-width: 360px;
   }
+
+  .middle-row {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
+    margin: 30px 0;
+    gap: 5%;
+  }
+
 }
 
 @media (max-width: 340px) {
