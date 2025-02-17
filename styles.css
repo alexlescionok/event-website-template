@@ -251,7 +251,6 @@ margin: 0 20px;
 }
 
 .rsvp-button-split {
-  border: 3px solid var(--header-font-colour);
   width: 250px;
   margin: 20px 20px;
   padding: 10px;
@@ -266,10 +265,12 @@ button {
   font-size: clamp(1.5rem, 8vw, 2.5rem);
   text-align: center;
   word-wrap: break-word;
+  outline-color: transparent;
+  border: none;
+  border-radius: 50px;
   background-color: #7b7776;
-  border: 3px solid var(--header-font-colour);
   color: var(--main-font-colour);
-  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.507);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.507);
   transition: transform 0.6s, box-shadow 0.6s; 
   cursor: pointer;
 }
@@ -279,7 +280,7 @@ button:hover {
   background-color: #7b7776;
   color: var(--header-font-colour);
   transform: scale(1.1);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* button styles end */
