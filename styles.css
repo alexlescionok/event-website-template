@@ -170,12 +170,12 @@ h1 {
   max-width: 100%;
 }
 
-.images {
+.image-container {
   text-align: center;
   font-size: 2.5rem;
 }
 
-.images img {
+.image-container img {
   max-width: 100%;
   width: 200px;
   height: 200px;
@@ -185,26 +185,6 @@ h1 {
 }
 
 /* vendors styles end */
-
-/* venue info styles start */
-
-.finer-details h1 {
-  font-size: clamp(3rem, 8vw, 5rem);
-}
-
-.finer-details h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.venue-info p  {
-  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
-}
-
-.finer-details p {
-  font-size: clamp(1.5rem, 2vw, 1.5rem);
-}
-
-/* venue info styles end */
 
 /* form styles start */
 
@@ -271,7 +251,6 @@ margin: 0 20px;
 }
 
 .rsvp-button-split {
-  border: 3px solid var(--header-font-colour);
   width: 250px;
   margin: 20px 20px;
   padding: 10px;
@@ -286,10 +265,12 @@ button {
   font-size: clamp(1.5rem, 8vw, 2.5rem);
   text-align: center;
   word-wrap: break-word;
+  outline-color: transparent;
+  border: none;
+  border-radius: 50px;
   background-color: #7b7776;
-  border: 3px solid var(--header-font-colour);
   color: var(--main-font-colour);
-  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.507);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.507);
   transition: transform 0.6s, box-shadow 0.6s; 
   cursor: pointer;
 }
@@ -299,30 +280,19 @@ button:hover {
   background-color: #7b7776;
   color: var(--header-font-colour);
   transform: scale(1.1);
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* button styles end */
 
 /* divider styles start */
 
-.divider-bottom {
-  border-bottom: 1px solid var(--main-font-colour);
-  border-radius: 20px;
-  padding: 0 20px 0 20px;
+.divider {
+  border-bottom: 3px solid var(--main-font-colour);
   max-width: 1000px;
   margin: 0 auto;
-  height: 20px;
 }
 
-.divider-top {
-  border-top: 1px solid var(--main-font-colour);
-  border-radius: 20px;
-  padding: 0 20px 0 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  height: 20px;
-}
 
 /* divider styles end */
 
@@ -373,7 +343,7 @@ a {
 }
 
 @media (max-width: 760px) {
-  .images img {
+  .image-container img {
       width: 250px;
       height: 250px;
   }
@@ -420,13 +390,13 @@ a {
       max-width: 400px;
       text-align: center;
   }
-  .event, .images {
+  .event, .image-container {
       font-size: 2rem;
   }
-  .images{
+  .image-container{
       border-bottom: 2px solid #000000bb
   }
-  .images:nth-child(6) {
+  .image-container:nth-child(6) {
       border-bottom: none;
   }
 }
@@ -440,7 +410,7 @@ a {
   .rsvp-button {
       height: auto;
   }
-  .images img {
+  .image-container img {
       width: 250px;
       height: 250px;
   }
