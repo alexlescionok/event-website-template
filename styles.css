@@ -17,8 +17,8 @@
   --header-font: "BebasNeue";
   --sub-header-font: "GeistBold";
   font-family: "GeistRegular", sans-serif;
-  --header-font-colour: #1a1919 ;
-  --main-font-colour: #161414;
+  --header-font-colour: #ffffff ;
+  --main-font-colour: #ffffff;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   height: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #6f71afc7;
+  background-color: #000000c7;
   color: var(--main-font-colour);
   box-sizing: border-box;
 }
@@ -270,7 +270,7 @@ button {
   border-radius: 50px;
   background-color: #7b7776;
   color: var(--main-font-colour);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.507);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.507);
   transition: transform 0.6s, box-shadow 0.6s; 
   cursor: pointer;
 }
