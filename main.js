@@ -1,11 +1,11 @@
-function sanitizeInput(input) { 
-  return DOMPurify.sanitize(input); 
-}
+const mainButton = document.getElementById("mainButton");
+const rsvpButton = document.getElementById("rsvpButton");
+const infoButton = document.getElementById("infoButton");
 
 function splitButton() {
-  document.getElementById("mainButton").style.display = "none";
-  document.getElementById("rsvpButton").style.display = "inline-block";
-  document.getElementById("infoButton").style.display = "inline-block";
+  mainButton.style.display = "none";
+  rsvpButton.style.display = "inline-block";
+  infoButton.style.display = "inline-block";
 }
 
 function hidePage() {
@@ -13,14 +13,9 @@ function hidePage() {
   document.getElementById("main").style.display = "none";
   document.getElementById("response").style.display = "block";
   document.getElementById("redirect-msg").style.display = "block";
-  document.getElementById("redirect-link").style.color = "#eddedd";
-  document.getElementById("redirect-msg").style.color = "#eddedd";
-   setTimeout(() => {
-      document.getElementById("redirect-link").style.color = "#cc96a1";
-      document.getElementById("redirect-msg").style.color = "#cc96a1";
-  }, 500);    
+  document.getElementById("redirect-link").style.color = "black";
+  document.getElementById("redirect-msg").style.color = "black";
   document.body.classList.add('changed');
-  return true;
 }
 
 function handleRedirect() {
@@ -38,8 +33,10 @@ function handleRedirect() {
   }, 1500); // holds timer at 5 seconds for 1.5 seconds to account for response time
 }
 
-document.getElementById('mainButton').addEventListener('click', splitButton);
+mainButton.addEventListener('click', splitButton);
 
-document.querySelector('form').addEventListener('submit', function(event) { 
-  hidePage(); handleRedirect(); 
+document.querySelector('form').addEventListener('submit', (event) => {
+  event.preventDefault(); 
+  hidePage(); 
+  handleRedirect(); 
 });
