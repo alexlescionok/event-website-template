@@ -6,6 +6,10 @@ const dietaryReqs = document.getElementById("dietaryRequirements");
 const optMsg = document.getElementById("message");
 const rsvpForm = document.getElementById("rsvpForm");
 
+const removeSpecialChars = (input) => {
+  return input.trim().replace(/[^a-z0-9\-\s]/gi, '')
+}
+
 const splitButton = () => {
   mainButton.style.display = "none";
   rsvpButton.style.display = "inline-block";
@@ -37,10 +41,13 @@ const handleRedirect = () => {
   }, 1500); // holds timer at 5 seconds for 1.5 seconds to account for response time
 }
 
-mainButton.addEventListener('click', splitButton);
-
 rsvpForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
+  removeSpecialChars(formName.value);
+  removeSpecialChars(dietaryReqs.value);
+  removeSpecialChars(optMsg.value);
   hidePage(); 
   handleRedirect(); 
 });
+
+mainButton.addEventListener('click', splitButton);
