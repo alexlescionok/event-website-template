@@ -1,14 +1,18 @@
 const mainButton = document.getElementById("mainButton");
 const rsvpButton = document.getElementById("rsvpButton");
 const infoButton = document.getElementById("infoButton");
+const formName = document.getElementById("name");
+const dietaryReqs = document.getElementById("dietaryRequirements");
+const optMsg = document.getElementById("message");
+const rsvpForm = document.getElementById("rsvpForm");
 
-function splitButton() {
+const splitButton = () => {
   mainButton.style.display = "none";
   rsvpButton.style.display = "inline-block";
   infoButton.style.display = "inline-block";
 }
 
-function hidePage() {
+const hidePage = () => {
   document.getElementById("header").style.display = "none";
   document.getElementById("main").style.display = "none";
   document.getElementById("response").style.display = "block";
@@ -18,7 +22,7 @@ function hidePage() {
   document.body.classList.add('changed');
 }
 
-function handleRedirect() {
+const handleRedirect = () => {
   setTimeout(() => {
       let countdown = 5;
       const countdownElement = document.getElementById('countdown');
@@ -35,7 +39,7 @@ function handleRedirect() {
 
 mainButton.addEventListener('click', splitButton);
 
-document.querySelector('form').addEventListener('submit', (event) => {
+rsvpForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
   hidePage(); 
   handleRedirect(); 
