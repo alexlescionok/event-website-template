@@ -67,7 +67,7 @@ rsvpForm.addEventListener('submit', (event) => {
     if (!response.ok) {
       throw new Error("Error, please resubmit your details");
     }
-    return response.text(); // Use response.json() if backend returns JSON
+    return response.json(); // Use response.text() if backend does not return JSON
   })
   .then(responseData => {
     console.log("Success:", responseData);
