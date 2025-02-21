@@ -5,6 +5,7 @@ const formName = document.getElementById("name");
 const dietaryReqs = document.getElementById("dietaryRequirements");
 const optMsg = document.getElementById("message");
 const rsvpForm = document.getElementById("rsvpForm");
+const backendRes = document.getElementById("response");
 
 const removeSpecialChars = (input) => {
   return input.trim().replace(/[^a-z0-9\-\s]/gi, '')
@@ -19,7 +20,7 @@ const splitButton = () => {
 const hidePage = () => {
   document.getElementById("header").style.display = "none";
   document.getElementById("main").style.display = "none";
-  document.getElementById("response").style.display = "block";
+  backendRes.style.display = "block";
   document.getElementById("redirect-msg").style.display = "block";
   document.getElementById("redirect-link").style.color = "black";
   document.getElementById("redirect-msg").style.color = "black";
@@ -43,11 +44,39 @@ const handleRedirect = () => {
 
 rsvpForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
+
   removeSpecialChars(formName.value);
   removeSpecialChars(dietaryReqs.value);
   removeSpecialChars(optMsg.value);
+
   hidePage(); 
   handleRedirect(); 
+
+  const data = new FormData(event.target);
+  const entries = Object.fromEntries(data.entries());
+
+  fetch("https://reqres.in/api/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(entries)
+  })
+  
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Error, please resubmit your details");
+    }
+    return response.json(); // Use response.text() if backend does not return JSON
+  })
+  .then(responseData => {
+    console.log("Success:", responseData);
+    backendRes.innerText = "Your form has been submitted sucessfully";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  })
+  // console.table(entries);
 });
 
 mainButton.addEventListener('click', splitButton);
