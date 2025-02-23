@@ -11,34 +11,34 @@
 <body>
 
   <header id="header">
-    <div class="header-names-container">
-      <h2 class="sub-header-text">Event Name<br>Introduction</h2>
-      <h1 class="event-name">Event Name</h1>
-      <h2 class="sub-header-text">Small event<br>description</h2>
+    <div class="headerNamesContainer">
+      <h2 class="subHeaderText">Event Name<br>Introduction</h2>
+      <h1 class="eventName">Event Name</h1>
+      <h2 class="subHeaderText">Small event<br>description</h2>
     </div>  
     <div class="date">
-      <div class="top-row">
+      <div class="topRow">
           <span class="may">Month</span>
       </div>
-      <div class="middle-row">
-          <span class="text-borders">Day</span>
+      <div class="middleRow">
+          <span class="textBorders">Day</span>
           <span class="highlight">Calendar Day</span>
-          <span class="text-borders">Time</span>
+          <span class="textBorders">Time</span>
       </div>
-      <div class="bottom-row">
+      <div class="bottomRow">
           <span class="year">Year</span>
       </div>
-      <div class="splitter-button">
-        <a class="button-link" id="mainButton">
-          <button class="rsvp-button">Click here to RSVP and for finer details</button>
+      <div class="splitterButton">
+        <a class="buttonLink" id="mainButton">
+          <button class="rsvpButton">Click here to RSVP and for finer details</button>
         </a>
-        <a class="button-link" id="rsvpButton" href="#formWrapper" style="display: none;">
-          <button class="rsvp-button-split">RSVP</button>
+        <a class="buttonLink" id="rsvpButton" href="#formWrapper" style="display: none;">
+          <button class="rsvpButtonSplit">RSVP</button>
         </a>
 
         <!--Enter your page directory where you would like the button to redirect to when clicked-->
-        <a class="button-link" id="infoButton" href="/info" style="display: none;"> 
-          <button class="rsvp-button-split">Finer Details</button>
+        <a class="buttonLink" id="infoButton" href="/info" style="display: none;"> 
+          <button class="rsvpButtonSplit">Finer Details</button>
         </a>
       </div> 
     </div>   
@@ -50,8 +50,8 @@
     
     <section>
       <h1>Schedule</h1>
-      <div class="scheduled-events">
-        <ul class="event-list">
+      <div class="scheduledEvents">
+        <ul class="eventList">
           <li class="event">13:00<span>event</span></li>
           <li class="event">13:30<span>event</span></li>
           <li class="event">14:00<span>event</span></li>
@@ -69,39 +69,39 @@
 
     <section class="gallery">
       <h1>Gallery</h1>
-      <div class="grid-layout">
+      <div class="gridLayout">
 
-        <article class="image-container">
+        <article class="imageContainer">
           <h2>Name</h2>
           <img src="./img/Calm Corg.jpg" alt="Corgi at the beach" />
           <h3>Description</h3>
         </article>
 
-        <article class="image-container">
+        <article class="imageContainer">
           <h2>Name</h2>
           <img src="./img/Excited Fluff.jpg" alt="Happy white husky" />
           <h3>Description</h3>
         </article>
 
-        <article class="image-container">
+        <article class="imageContainer">
           <h2>Name</h2>
           <img src="./img/Longing Lab.jpg" alt="Labrador in deep thought" />
           <h3>Description</h3>
         </article>
         
-        <article class="image-container">
+        <article class="imageContainer">
           <h2>Name</h2>
           <img src="./img/Positive Pom.jpg" alt="A pomeranian smiling" />
           <h3>Description</h3>
         </article>
 
-        <article class="image-container">
+        <article class="imageContainer">
           <h2>Name</h2>
           <img src="./img/Sweet Shib.jpg" alt="A shiba inu lying down" />
           <h3>Description</h3>
         </article>
 
-        <article class="image-container">
+        <article class="imageContainer">
           <h2>Name</h2>
           <img src="./img/Walk Corg.jpg" alt="A corgi walking at a park" />
           <h3>Description</h3>
@@ -115,24 +115,24 @@
 
     <section id="formWrapper"> 
       <h1>RSVP</h1>
-      <p>Enter additional/optional text here<span>(no later than [enter end date here])</span>:</p>
+      <p>Enter optional text here<span>(use this for highlighting text)</span>:</p>
       <form
         class="form"
         id="rsvpForm"
-        hx-post=“LAMBDA_FUNCTION_URL” 
+        hx-post=“” 
         hx-target="#response"
         hx-swap="outerHTML"
         hx-ext="json-enc">
 
         <div class="formGroup">
           <!-- Name input -->
-          <label for="name">Who are you RSVPing for?</label>
+          <label for="name">Required 1</label>
           <input type="text" id="name" name="name" required>
         </div>
 
-        <div class="formGroup">
+        <div class="formGroup"> 
           <!-- Attendance -->
-          <label for="attending">Response:</label>
+          <label for="attending">Required 2</label>
           <select id="attending" name="attending" required>
               <option value="yes">Accept</option>
               <option value="no">Decline</option>
@@ -140,26 +140,34 @@
         </div>
 
         <div class="formGroup">
-          <label for="dietaryRequirements">Do you have any allergies or dietary requirements? If yes, please include them here:</label>
-          <input type="text" id="dietaryRequirements" name="dietaryRequirements" required>
+          <label for="nonAlcoholPreference">Required 3</label>
+          <select id="nonAlcoholPreference" name="nonAlcoholPreference" required>
+              <option value="yes">Yes</option>
+              <option selected="selected" value="no">No</option>
+          </select>
         </div>
 
         <div class="formGroup">
-          <label for="message">Optional Message:</label>
+          <label for="dietaryRequirements">Optional 1</label>
+          <input type="text" id="dietaryRequirements" name="dietaryRequirements">
+        </div>
+
+        <div class="formGroup">
+          <label for="message">Optional2</label>
           <input type="text" id="message" name="message">
         </div>
 
-        <div class="submit-container">
+        <div class="submitContainer">
           <button type="submit">Submit</button>
         </div>
       </form>
     </section>
   </main>
-  <div class="response-container">
+  <div class="responseContainer">
     <div id="response"></div>
-    <p id="redirect-placeholder"> </p>
-    <p id="redirect-msg">You will be redirected in <span id="countdown">5</span> seconds. 
-      If not, click <a id="redirect-link" href="/">here</a>.
+    <p id="redirectPlaceholder"> </p>
+    <p id="redirectMsg">You will be redirected in <span id="countdown">5</span> seconds. 
+      If not, click <a id="redirectLink" href="/">here</a>.
     </p>
   </div>
   <script src="main.js"></script>
