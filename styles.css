@@ -59,7 +59,7 @@ header {
   margin: 0 auto;  
 }
 
-.header-names-container {
+.headerNamesContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,12 +68,12 @@ header {
   margin: 50px auto;
 }
 
-.sub-header-text {
+.subHeaderText {
   font-family: var(--sub-header-font);
   font-size: clamp(1.5rem, 6vw, 3rem);
 }
 
-.event-name {
+.eventName {
   font-family: var(--header-font);
   color: var(--header-font-colour);
   font-size: clamp(2rem, 13vw, 12rem);
@@ -87,11 +87,11 @@ header {
   margin-bottom: 80px;
 }
 
-.top-row {
+.topRow {
   margin-top: 30px;
 }
 
-.middle-row {
+.middleRow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,11 +104,11 @@ header {
   color: var(--header-font-colour);
 }
 
-.bottom-row {
+.bottomRow {
   margin-bottom: 50px;
 }
 
-.button-link {
+.buttonLink {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +116,7 @@ header {
   text-decoration: none; 
 }
 
-.text-borders {
+.textBorders {
   min-width: 160px;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
@@ -133,7 +133,7 @@ h1 {
 
 /* Schedule styles start*/
 
-.event-list {
+.eventList {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,7 +153,7 @@ h1 {
   text-align: right;
 }
 
-.event-list li {
+.eventList li {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -163,19 +163,19 @@ h1 {
 
 /* vendors styles start */
 
-.grid-layout {
+.gridLayout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
   max-width: 100%;
 }
 
-.image-container {
+.imageContainer {
   text-align: center;
   font-size: 2.5rem;
 }
 
-.image-container img {
+.imageContainer img {
   max-width: 100%;
   width: 200px;
   height: 200px;
@@ -235,7 +235,7 @@ h1 {
   padding: 10px;
 }
 
-.submit-container {
+.submitContainer {
   margin-top: 50px;
   display: flex;
   justify-content: center;
@@ -250,11 +250,11 @@ h1 {
 margin: 0 20px;
 }
 
-.rsvp-button {
+.rsvpButton {
   padding: 20px;
 }
 
-.rsvp-button-split {
+.rsvpButtonSplit {
   width: 250px;
   margin: 20px 20px;
   padding: 10px;
@@ -301,7 +301,7 @@ button:hover {
 /* divider styles end */
 
 /* response and redirect from form styles start */
-.response-container {
+.responseContainer {
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -312,13 +312,13 @@ button:hover {
   margin-bottom: 80px;
 }
 
-#redirect-placeholder {
+#redirectPlaceholder {
   display: none;
   font-size: clamp(1rem, 2vw, 1.5rem);
   margin-top: 20px;
 }
 
-#redirect-msg {
+#redirectMsg {
   color: var(--main-font-colour);
   display: none;
   font-size: clamp(1.3rem, 2vw, 1.5rem);
@@ -335,10 +335,10 @@ a {
 
 /* Adjustments for screens max-width 790px */
 @media (max-width: 790px) {
-  .event-list {
+  .eventList {
       max-width: 500px;
   }
-  .text-borders {
+  .textBorders {
       min-width: 140px;
   }
   button {
@@ -347,7 +347,7 @@ a {
 }
 
 @media (max-width: 760px) {
-  .image-container img {
+  .imageContainer img {
       width: 250px;
       height: 250px;
   }
@@ -355,7 +355,7 @@ a {
 
 /* Adjustments for screens max-width 689px */
 @media (max-width: 689px) {
-  .grid-layout {
+  .gridLayout {
       gap: 0;
   }
 
@@ -363,7 +363,7 @@ a {
     font-size: clamp(2rem, 12vw, 3rem);
   }
 
-  .text-borders {
+  .textBorders {
     min-width: 60px;
 }
 }
@@ -388,13 +388,13 @@ a {
       max-width: 400px;
       text-align: center;
   }
-  .event, .image-container {
+  .event, .imageContainer {
       font-size: 2rem;
   }
-  .image-container{
+  .imageContainer{
       border-bottom: 2px solid #000000bb
   }
-  .image-container:nth-child(6) {
+  .imageContainer:nth-child(6) {
       border-bottom: none;
   }
 }
@@ -402,13 +402,13 @@ a {
 /* Adjustments for screens max-width 500px */
 @media (max-width: 500px) {
   
-  .button-link {
+  .buttonLink {
       margin: 0 auto;
   }
-  .rsvp-button {
+  .rsvpButton {
       height: auto;
   }
-  .image-container img {
+  .imageContainer img {
       width: 250px;
       height: 250px;
   }
@@ -419,16 +419,16 @@ a {
   #formWrapper p {
       padding: 20px;
   }
-  .text-borders {
+  .textBorders {
       min-width: 50px;
       margin: 20px 0;
   }
 
-  .divider-bottom, .divider-top {
+  .divider {
       max-width: 360px;
   }
 
-  .middle-row {
+  .middleRow {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -440,7 +440,7 @@ a {
 }
 
 @media (max-width: 340px) {
-  .grid-layout {
+  .gridLayout {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }

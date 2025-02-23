@@ -6,6 +6,7 @@ const dietaryReqs = document.getElementById("dietaryRequirements");
 const optMsg = document.getElementById("message");
 const rsvpForm = document.getElementById("rsvpForm");
 const backendRes = document.getElementById("response");
+const alcPref = document.getElementById("nonAlcoholPreference");
 
 const removeSpecialChars = (input) => {
   return input.trim().replace(/[^a-z0-9\-\s]/gi, '')
@@ -21,9 +22,9 @@ const hidePage = () => {
   document.getElementById("header").style.display = "none";
   document.getElementById("main").style.display = "none";
   backendRes.style.display = "block";
-  document.getElementById("redirect-msg").style.display = "block";
-  document.getElementById("redirect-link").style.color = "black";
-  document.getElementById("redirect-msg").style.color = "black";
+  document.getElementById("redirectMsg").style.display = "block";
+  document.getElementById("redirectLink").style.color = "black";
+  document.getElementById("redirectMsg").style.color = "black";
   document.body.classList.add('changed');
 }
 
@@ -48,6 +49,7 @@ rsvpForm.addEventListener('submit', (event) => {
   removeSpecialChars(formName.value);
   removeSpecialChars(dietaryReqs.value);
   removeSpecialChars(optMsg.value);
+  removeSpecialChars(alcPref.value);
 
   hidePage(); 
   handleRedirect(); 
