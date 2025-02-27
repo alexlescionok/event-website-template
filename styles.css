@@ -13,11 +13,16 @@
   src: url("./Fonts/geist/Geist-Bold.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Neonderthaw";
+  src: url("./Fonts/Neonderthaw/Neonderthaw-Regular.woff2") format("woff2");
+}
+
 :root {
-  --header-font: "BebasNeue";
+  --header-font: "Neonderthaw";
   --sub-header-font: "GeistBold";
   font-family: "GeistRegular", sans-serif;
-  --header-font-colour: #ffffff ;
+  --header-font-colour: #ff28d0;
   --main-font-colour: #ffffff;
 }
 
@@ -50,6 +55,42 @@ section {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+/* Scroll styles start */
+
+.scrollWatcher {
+  height: 10px;
+  width:100%;
+  position: fixed;
+  top: 0;
+  background-color: fuchsia;
+  z-index: 1000;
+  scale: 0.5 1;
+  transform-origin: left;
+  animation: scrollWatcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scrollWatcher {
+  to { scale: 1 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .imageContainer > img {
+    scale: .8; opacity: 0;
+    animation: fadeIn linear forwards;
+    animation-timeline: view();
+    animation-range: 100px 300px;
+  }
+}
+
+@keyframes fadeIn {
+  to {scale: 1; opacity: 1;}
+}
+
+
+
+/* Scroll styles end */
 
 /* Header styles start */
 
